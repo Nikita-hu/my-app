@@ -13,13 +13,59 @@ import WannaGo from './image/WannaGo.jpg'
 export default function DialogForm({ handleCloseForm, openForm }) {
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
+    const [formattedPhone, setFormattedPhone] = useState('');
+
+    const formatPhoneNumber = (input) => {
+        // Удаляем все нецифровые символы
+        const cleaned = input.replace(/\D/g, '');
+        
+        // Ограничиваем длину номера (11 цифр с 7 или 8 в начале)
+        let trimmed = cleaned;
+        if (cleaned.length > 11) {
+            trimmed = cleaned.substring(0, 11);
+        }
+        
+        // Форматируем номер для отображения
+        let formatted = '';
+        if (trimmed.length > 0) {
+            formatted = `+7 (${trimmed.substring(1, 4)}`;
+            if (trimmed.length > 4) {
+                formatted += `) ${trimmed.substring(4, 7)}`;
+            }
+            if (trimmed.length > 7) {
+                formatted += ` ${trimmed.substring(7, 9)}`;
+            }
+            if (trimmed.length > 9) {
+                formatted += ` ${trimmed.substring(9, 11)}`;
+            }
+        }
+        
+        return formatted;
+    };
+
+    const handlePhoneChange = (e) => {
+        const input = e.target.value;
+        const formatted = formatPhoneNumber(input);
+        setFormattedPhone(formatted);
+        
+        // Сохраняем чистый номер для отправки
+        const cleaned = input.replace(/\D/g, '');
+        if (cleaned.startsWith('8')) {
+            setPhone(`+7${cleaned.substring(1)}`);
+        } else if (cleaned.startsWith('7')) {
+            setPhone(`+${cleaned}`);
+        } else if (cleaned) {
+            setPhone(`+7${cleaned}`);
+        } else {
+            setPhone('');
+        }
+    };
 
     const handleSubmit = async () => {
         try {
-
             const formData = {
                 fio: name,
-                number: phone
+                number: phone.startsWith('+') ? phone : `+${phone}`
             };
 
             const response = await fetch('http://185.129.146.54:8189/wannago/req', {
@@ -36,6 +82,7 @@ export default function DialogForm({ handleCloseForm, openForm }) {
             handleCloseForm();
             setName('');
             setPhone('');
+            setFormattedPhone('');
 
             console.log('Данные успешно отправлены:', response);
         } catch (error) {
@@ -114,8 +161,8 @@ export default function DialogForm({ handleCloseForm, openForm }) {
                     label="+7 (___) ___ __ __"
                     variant="outlined"
                     size="small"
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
+                    value={formattedPhone}
+                    onChange={handlePhoneChange}
                     sx={{
                         '& .MuiInputLabel-root': {
                             color: 'rgb(146, 146, 146)',

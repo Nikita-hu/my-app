@@ -539,7 +539,7 @@ const YandexMap = ({ mapContainerRef }) => {
         </DialogActions>
       </Dialog>
 
-      {isLoggedIn && (
+      {/* {isLoggedIn && (
         <Button
           variant="contained"
           onClick={() => {
@@ -558,7 +558,7 @@ const YandexMap = ({ mapContainerRef }) => {
         >
           Сохранить все точки
         </Button>
-      )}
+      )} */}
     </>
   );
 };
