@@ -30,7 +30,7 @@ const Header = ({ open, handleClickOpenForm, handleClose, setIsLoggedIn, openFor
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center',
-                    padding: isMobile ? '8px 12px' : '8px 24px',
+                    padding: isMobile ? '8px 20px' : '8px 24px',
                     gap: isMobile ? '8px' : '16px',
                     minHeight: '64px',
                     flexWrap: 'nowrap',
@@ -44,7 +44,7 @@ const Header = ({ open, handleClickOpenForm, handleClose, setIsLoggedIn, openFor
                         display: 'flex',
                         alignItems: 'center',
                         flexShrink: 0,
-                        marginRight: isMobile ? '8px' : '16px'
+                        marginRight: isMobile ? '0px' : '0px'
                     }}>
                         <img
                             src={WannaGo}
@@ -62,29 +62,6 @@ const Header = ({ open, handleClickOpenForm, handleClose, setIsLoggedIn, openFor
                         minWidth: isMobile ? '100px' : '300px',
                         maxWidth: '500px'
                     }}>
-                        {/* <TextField
-                            fullWidth
-                            variant="outlined"
-                            placeholder={isMobile ? "Поиск..." : "Поиск мест и туров..."}
-                            size="small"
-                            sx={{
-                                '& .MuiOutlinedInput-root': {
-                                    borderRadius: '20px',
-                                    backgroundColor: '#f5f5f5',
-                                    height: '40px'
-                                },
-                                '& .MuiInputBase-input': {
-                                    padding: '8px 8px 8px 0'
-                                }
-                            }}
-                            InputProps={{
-                                startAdornment: (
-                                    <InputAdornment position="start">
-                                        <SearchIcon color="action" fontSize={isMobile ? "small" : "medium"} />
-                                    </InputAdornment>
-                                ),
-                            }}
-                        /> */}
                     </Box>
 
                     {/* Группа кнопок */}
@@ -130,9 +107,6 @@ const Header = ({ open, handleClickOpenForm, handleClose, setIsLoggedIn, openFor
                                     padding: isMobile ? '6px 10px' : '8px 16px',
                                     fontSize: isMobile ? '0.75rem' : '0.875rem',
                                     minWidth: isMobile ? '70px' : '90px',
-                                    // '&:hover': {
-                                    //     backgroundColor: '#333'
-                                    // }
                                 }}
                                 onClick={handleClickExit}
                             >

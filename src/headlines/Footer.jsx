@@ -38,7 +38,7 @@ const Footer = () => {
           flexDirection: 'column',
           gap: '8px'
         }}>
-          <Typography variant="body1" sx={{ fontSize: '14px' }}>© 2022</Typography>
+          <Typography variant="body1" sx={{ fontSize: '14px' }}>© 2025</Typography>
           <Typography variant="h6" sx={{ fontSize: '14px' }}>WannaGo</Typography>
           <Typography variant="caption" sx={{ fontSize: '14px' }}>Все права защищены</Typography>
         </Box>
@@ -111,7 +111,7 @@ const Footer = () => {
           </Typography>
 
           <Typography variant="body2" sx={{ fontSize: '14px', whiteSpace: 'nowrap' }}>
-            Телефон: +7 920 885 02 64
+            Телефон: +7 910 744 44 43
           </Typography>
         </Box>
       </Box>

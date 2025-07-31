@@ -10,6 +10,7 @@ import {
 } from '@mui/material';
 import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
+import YandexIcon from './image/YandexIcon.png'
 const YandexMapInit = (props) => {
   const mapContainerRef = useRef(null)
   const scriptLoaded = useRef(false);
@@ -271,7 +272,8 @@ const YandexMap = ({ mapContainerRef }) => {
         balloonContentHeader: ''
       }, {
         iconLayout: 'default#image',
-        iconImageHref: 'https://cdn-icons-png.flaticon.com/512/684/684908.png',
+        // iconImageHref: 'https://cdn-icons-png.flaticon.com/512/684/684908.png',
+         iconImageHref: `${YandexIcon}`,
         iconImageSize: [32, 32],
         iconImageOffset: [-16, -32],
         draggable: isLoggedIn
