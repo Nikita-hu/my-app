@@ -30,8 +30,8 @@ const Header = ({ open, handleClickOpenForm, handleClose, setIsLoggedIn, openFor
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center',
-                    padding: isMobile ? '8px 20px' : '8px 24px',
-                    gap: isMobile ? '8px' : '16px',
+                    padding: isMobile ? '8px 25px' : '8px 24px',
+                    gap: isMobile ? '0px' : '16px',
                     minHeight: '64px',
                     flexWrap: 'nowrap',
                     overflowX: 'auto',
@@ -54,14 +54,6 @@ const Header = ({ open, handleClickOpenForm, handleClose, setIsLoggedIn, openFor
                                 objectFit: 'contain'
                             }}
                         />
-                    </Box>
-
-                    {/* Поисковая строка */}
-                    <Box sx={{
-                        flex: isMobile ? '0 1 auto' : '1 0 auto',
-                        minWidth: isMobile ? '100px' : '300px',
-                        maxWidth: '500px'
-                    }}>
                     </Box>
 
                     {/* Группа кнопок */}
