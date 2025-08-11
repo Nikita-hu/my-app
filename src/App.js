@@ -2,7 +2,7 @@ import './App.css';
 import NoAuth from './NoAuth.jsx'
 import Header from './headlines/Header.jsx';
 import Footer from './headlines/Footer.jsx';
-import YandexMap from './YanndexMap.jsx';
+import Y1 from './Y1.jsx';
 import { useState } from 'react';
 function App() {
   const [open, setOpen] = useState(false);
@@ -44,8 +44,7 @@ function App() {
         handleClickOpenForm={handleClickOpenForm} handleCloseForm={handleCloseForm} setOpenForm={setOpenForm} openForm={openForm} />
 
       <NoAuth handleClickOpen={handleClickOpen} handleClickExit={handleClickExit} isLoggedIn={isLoggedIn} />
-      <YandexMap isLoggedIn={isLoggedIn} />
-
+      <Y1 isLoggedIn={isLoggedIn} />
       <Footer />
     </>
   );

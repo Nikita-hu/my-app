@@ -34,72 +34,111 @@ function NoAuth({ handleClickOpen }) {
                     flexDirection: 'column',
                     alignItems: isMobile ? 'center' : 'flex-start'
                 }}>
-                    <img
-                        alt='WannaGo'
-                        src={WannaGo}
-                        style={{
-                            width: isMobile ? '80%' : '100%',
-                            maxWidth: '300px',
-                            marginBottom: '20px'
-                        }}
-                    />
 
-                    <p style={{
-                        fontWeight: '600',
-                        fontSize: isMobile ? '1.1rem' : '1.2rem',
-                        marginBottom: '15px'
-                    }}>
-                        WannaGo — путешествуй с теми, кто знает
-                    </p>
 
-                    <p style={{ marginBottom: '10px' }}>Создавай и находи лучшие места для поездок</p>
-                    <p style={{ marginBottom: '5px' }}>Как это работает: </p>
-                    <p style={{ marginBottom: '5px' }}>1️⃣ Зарегистрируйся (30 секунд) </p>
-                    <p style={{ marginBottom: '5px' }}>2️⃣ Отмечай любимые места на карте с фото и советами </p>
-                    <p style={{ marginBottom: '20px' }}>3️⃣ Следи за сезонными локациями от других путешественников </p>
 
                     {!isLoggedIn ? (
-                        <Button
-                            variant="contained"
-                            sx={{
-                                backgroundColor: '#FF7A00',
-                                color: 'white',
-                                borderRadius: '10px',
-                                textTransform: 'none',
-                                width: isMobile ? '100%' : 'auto',
-                                padding: isMobile ? '10px 20px' : '8px 24px',
-                                fontSize: isMobile ? '1rem' : '0.875rem'
+                        <>
+                        <img
+                        alt = 'WannaGo'
+                        src = { WannaGo }
+                        style = {{
+                            width: isMobile ? '80%' : '100%',
+                            maxWidth: '300px',
+                            marginBottom: '20px',
                             }}
-                            onClick={handleClickOpen}
-                        >
-                            Вход
-                        </Button>
-                    ) : (
+                        />
+                </>
+                    ):
+                        (
+                        <>
+                        <img
+                        alt = 'WannaGo'
+                        src = { WannaGo }
+                        style = {{
+                            width: isMobile ? '80%' : '100%',
+                            maxWidth: '300px',
+                            marginBottom: '20px',
+
+                            marginTop:  isMobile ? '10px' : '100px'
+                            }}
+                        />
+                </>
+                )
+                    
+                    }
+
+
+
+
+
+
+                {!isLoggedIn ? (
+                    <>
+                        <p style={{
+                            fontWeight: '600',
+                            fontSize: isMobile ? '1.1rem' : '1.2rem',
+                            marginBottom: '15px'
+                        }}>
+                            WannaGo — путешествуй с теми, кто знает
+                        </p>
+                        <p style={{ marginBottom: '10px' }}>Создавай и находи лучшие места для поездок</p>
+                        <p style={{ marginBottom: '5px' }}>Как это работает: </p>
+                        <p style={{ marginBottom: '5px' }}>1️⃣ Зарегистрируйся (30 секунд) </p>
+                        <p style={{ marginBottom: '5px' }}>2️⃣ Отмечай любимые места на карте с фото и советами </p>
+                        <p style={{ marginBottom: '20px' }}>3️⃣ Следи за сезонными локациями от других путешественников </p>
+                    </>
+
+                )
+                    :
+                    (
                         <>
                         </>
-                    )}
-                </div>
+                    )
+                }
 
-                <div style={{
-                    width: isMobile ? '100%' : '40%',
-                    display: 'flex',
-                    justifyContent: 'center'
-                }}>
-                    <img
-                        alt='WannaGo'
-                        src={Image44}
-                        style={{
-                            width: '100%',
-                            maxWidth: isMobile ? '400px' : 'none',
-                            height: 'auto',
-                            maxHeight: isMobile ? '50vh' : '70vh',
-                            objectFit: 'contain',
-                            borderRadius: isMobile ? '8px' : 'none'
+                {!isLoggedIn ? (
+                    <Button
+                        variant="contained"
+                        sx={{
+                            backgroundColor: '#FF7A00',
+                            color: 'white',
+                            borderRadius: '10px',
+                            textTransform: 'none',
+                            width: isMobile ? '100%' : 'auto',
+                            padding: isMobile ? '10px 20px' : '8px 24px',
+                            fontSize: isMobile ? '1rem' : '0.875rem'
                         }}
-                    />
-                </div>
+                        onClick={handleClickOpen}
+                    >
+                        Войти / Зарегистрироваться
+                    </Button>
+                ) : (
+                    <>
+                    </>
+                )}
+            </div>
+
+            <div style={{
+                width: isMobile ? '100%' : '40%',
+                display: 'flex',
+                justifyContent: 'center'
+            }}>
+                <img
+                    alt='WannaGo'
+                    src={Image44}
+                    style={{
+                        width: '100%',
+                        maxWidth: isMobile ? '400px' : 'none',
+                        height: 'auto',
+                        maxHeight: isMobile ? '50vh' : '70vh',
+                        objectFit: 'contain',
+                        borderRadius: isMobile ? '8px' : 'none'
+                    }}
+                />
             </div>
         </div>
+        </div >
     )
 }
 
