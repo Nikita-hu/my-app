@@ -47,11 +47,11 @@ const YandexMapInit = (props) => {
                 ref={mapContainerRef}
                 sx={{
                     width: '100%',
-                    height: '800px',
+                    height: '700px',
                     borderRadius: '8px',
                     overflow: 'hidden',
                     boxShadow: 3,
-                    margin: '20px 0'
+                    margin: '20px 0px'
                 }}
             />
             {(!isMapReady) ? null : <YandexMap mapContainerRef={mapContainerRef} {...props} />}
@@ -422,10 +422,10 @@ const YandexMap = ({ mapContainerRef }) => {
             };
 
             const requestBody = {
-                pointId: crypto.randomUUID(),
+                pointId: uuidv4(),
                 data: JSON.stringify(pointInfo),
                 authorId: authData.userId,
-                id: crypto.randomUUID()
+                id: uuidv4()
             };
 
             const response = await axios.post(
